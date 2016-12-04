@@ -33,7 +33,7 @@ $(function() {
 	});
 
 
-  // Mobile button
+  // Mobile button (JS / Jquery)
 
   var toggles = document.querySelectorAll('.c-hamburger');
 
@@ -46,7 +46,9 @@ $(function() {
     toggle.addEventListener( 'click', function(e) {
       e.preventDefault();
       (this.classList.contains('is-active') === true) ? this.classList.remove('is-active') : this.classList.add('is-active');
-      $('.mob-wrap').slideToggle();
+      var mobWrap = $('.mob-wrap').css('display');
+      (mobWrap == 'block') ? $('.mob-wrap').css({'display' : 'none'}) : $('.mob-wrap').css({'display' : 'block'});
+      $('.box-mob').slideToggle();
     });
   }
 
